@@ -7,17 +7,14 @@ matrix:
       os: linux
       node_js:
         - "10"
-
       install:
         - cd website
         - yarn
         - cd ..
-
       script:
         - cd website
         - yarn build
         - cd ..
-
       deploy:
         - provider: pages
           skip-cleanup: true
@@ -27,8 +24,7 @@ matrix:
           keep-history: true
           on:
             branch: master
-
-    - language: shell
+    - language: objective-c
       deploy:
         provider: script
         script: ./scripts/publish-iOS-pods.sh

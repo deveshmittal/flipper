@@ -5,5 +5,8 @@
 # in the root directory of this source tree.
 set -e
 
+source ~/.rvm/scripts/rvm
+rvm use default
+
 pod trunk push ./Flipper.podspec --use-libraries --allow-warnings --verbose
 pod trunk push ./FlipperKit.podspec --use-libraries --allow-warnings --verbose --skip-import-validation --swift-version=4.0
