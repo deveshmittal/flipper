@@ -3,13 +3,6 @@ osx_image: xcode10.2
 
 matrix:
   include:
-    deploy:
-      provider: script
-      script: ./scripts/publish-iOS-pods.sh
-      on:
-        branch: automate-ios-release
-
-  include:
     - language: node_js
       os: linux
       node_js:
@@ -34,6 +27,14 @@ matrix:
           keep-history: true
           on:
             branch: master
+
+    - language: shell
+      deploy:
+        provider: script
+        script: ./scripts/publish-iOS-pods.sh
+        on:
+          branch: automate-ios-release
+
     - language: node_js
       node_js:
         - "10"
