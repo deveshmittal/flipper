@@ -24,10 +24,11 @@ matrix:
           keep-history: true
           on:
             branch: master
+
     - language: objective-c
+      script: ./scripts/publish-iOS-pods.sh
       deploy:
-        provider: script
-        script: ./scripts/publish-iOS-pods.sh
+       - provider: script
         on:
           branch: automate-ios-release
 
