@@ -26,11 +26,12 @@ matrix:
             branch: master
 
     - language: objective-c
-      script: ./scripts/publish-iOS-pods.sh
+      script:
+        - ./scripts/publish-iOS-pods.sh
       deploy:
-       - provider: script
-        on:
-          branch: automate-ios-release
+       provider: script
+       on:
+        branch: automate-ios-release
 
     - language: node_js
       node_js:
