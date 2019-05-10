@@ -27,7 +27,8 @@ matrix:
 
     - language: objective-c
       script:
-        - ./scripts/publish-iOS-pods.sh
+        - travis_wait 30 pod trunk push ./FlipperKit.podspec --use-libraries --allow-warnings --silent --skip-import-validation --swift-version=4.0
+        - travis_wait 30 pod trunk push ./Flipper.podspec --use-libraries --allow-warnings --silent --skip-import-validation
       deploy:
         provider: script
         on:
